@@ -1,4 +1,4 @@
-!!SBtab	SBtabVersion='1.0' TableName='Experiments' TableTitle='Model Inputs and Measurement Mapping' TableType='QuantityMatrix' Document='MGluR'													
+!!SBtab	SBtabVersion='1.0' TableName='Experiments' TableTitle='Model Inputs and Measurement Mapping' TableType='QuantityMatrix' Document='Fujita_2010'													
 !ID	!Name	!RelativeTo	!Type	>Output	!Event	>S0	>S3	>S5	>S9	>S10	!ReferenceDOI	!T0	!Likelihood	!Sim_Time
 E0	Experiment 1		Time Series	Y0,Y1,Y2	EE0	68190.2	0.043309	3.5432	0	68190.2	10.1126/scisignal.2000810	-120	true	4000
 E1	Experiment 2		Time Series	Y0,Y1,Y2	EE0	68190.2	0.043309	3.5432	0	68190.2	10.1126/scisignal.2000810	-120	true	4000

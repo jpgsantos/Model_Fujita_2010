@@ -1,4 +1,4 @@
-function [stg] = f_settings_all_Akt()
+function [stg] = Fujita_2010()
 
 %% Import
 
@@ -8,17 +8,17 @@ stg.import = true;
 
 % Name of the folder where everything related to the model is stored
 % (Folder Model)
-stg.folder_model = "Model_Akt";
+stg.folder_model = "Model_Fujita_2010";
 
 % Name of the excel file with the sbtab
 % (SBtab excel name)
 % stg.sbtab_excel_name = "SBTAB_Akt_Benchmark_Paper.xlsx";
-stg.sbtab_excel_name = "SBTAB_Akt_Original_Paper.xlsx";
+stg.sbtab_excel_name = "SBTAB_Fujita_2010.xlsx";
 % stg.sbtab_excel_name = "SBTAB_Akt.xlsx";
 
 % Name of the model
 % (Name)
-stg.name = "Akt";
+stg.name = "Fujita_2010";
 
 % Name of the default model compartment
 % (Compartment name)
@@ -26,17 +26,9 @@ stg.cname = "Cell";
 
 % Name of the sbtab saved in .mat format
 % (SBtab name)
-stg.sbtab_name = "sbtab_" + stg.name;
+stg.sbtab_name = "SBtab_" + stg.name;
 
 %% Analysis
-
-% String with the analysis to be run, the options are "diag",
-% "opt", "SA"
-% and can be combined as for example "RS,diag", to not run any analysis set
-% stg.analysis to equal to ""
-% (Analysis)
-
-stg.analysis = "diag";
 
 % Experiments to run
 % stg.ms.exprun = [1,3,4];
@@ -45,7 +37,7 @@ stg.exprun = [1:6];
 % Choice between 0,1,2 and 3 to change either and how to apply log10 to the
 % scores (check documentation)
 % (Use logarithm)
-stg.useLog = 0;
+stg.useLog = 4;
 
 % True or false to decide whether to use multicore everywhere it is available
 % (Optimization Multicore)
@@ -53,7 +45,7 @@ stg.optmc = true;
 
 % Choice of ramdom seed
 % (Ramdom seed)
-stg.rseed = 1;
+stg.rseed = 2;
 
 % True or false to decide whether to use display simulation diagnostics in the
 % console
@@ -73,7 +65,7 @@ stg.placsl = true;
 stg.save_results = true;
 
 % True or false to decide whether to run detailed simulation for plots
-stg.simdetail = true;
+stg.simdetail = false;
 
 %% Simulation
 
@@ -87,11 +79,11 @@ stg.eqt  = 500000;
 
 % True or false to decide whether to do Dimensional Analysis
 % (Dimensional Analysis)
-stg.dimenanal = false;
+stg.dimenanal = true;
 
 % True or false to decide whether to do Unit conversion
 % (Unit conversion)
-stg.UnitConversion = false;
+stg.UnitConversion = true;
 
 % True or false to decide whether to do Absolute Tolerance Scaling
 % (Absolute Tolerance Scaling)
@@ -112,11 +104,11 @@ stg.simtime = "second";
 % True or false to decide whether to run sbioaccelerate (after changing this value
 % you need to run "clear functions" to see an effect)
 % (sbioaccelerate)
-stg.sbioacc = false;
+stg.sbioacc = true;
 
 % Max step size in the simulation (if empty matlab decides whats best)
 % (Maximum step)
-stg.maxstep = 0.1;
+stg.maxstep = [];
 
 % Max step size in the equilibration (if empty matlab decides whats best)
 % (Maximum step)
@@ -126,38 +118,19 @@ stg.maxstepeq = [];
 
 % Number of parameters to optimize
 % (Parameter number)
-stg.parnum = 13;
-% stg.ms.parnum = 5;
-
-% Index for the parameters that have thermodynamic constrains
-% (Termodiamic Constrains Index)
-% stg.tci = [8];
-stg.tci = [];
-
-% Parameters to multiply to the first parameter (in Stg.partest to get
-% to the correct thermodynamic constrain formula)
-% (Termodiamic Constrains multipliers)
-% stg.tcm([8],1) = [4];
-% stg.tcm([8],2) = [5];
-% stg.tcm([8],3) = [7];
-
-% Parameters to divide to the first parameter (in Stg.partest to get to
-% the correct thermodynamic constrain formula)
-% (Termodiamic Constrains divisors)
-% stg.tcd([8],1) = [1];
-% stg.tcd([8],2) = [3];
-% stg.tcd([8],3) = [6];
+stg.parnum = 12;
 
 % Array with the lower bound of all parameters
 % (Lower bound)
-stg.lb = zeros(1,stg.parnum)-15;
-stg.lb = [-2.17	-1.39	-4.81	-2.29	-1.51	-1.001220343	-5.68	-14.29	-2.92	-1.48	-2.95	-1.72	-3.97311552]-5;
-
+% stg.lb = zeros(1,stg.parnum)-15;
+% stg.lb = [-2.17	-1.39	-4.81	-2.29	-1.51	-1.001220343	-5.68	-14.29	-2.92	-1.48	-2.95	-1.72	-3.97311552]-5;
+stg.lb = [-2.17	-1.39	-4.81	-2.29	-1.51	-1.001220343	-5.68	-2.92	-1.48	-2.95	-1.72	-3.97311552]-5;
 
 % Array with the upper bound of all parameters
 % (Upper bound)
-stg.ub = zeros(1,stg.parnum);
-stg.ub = [-2.17	-1.39	-4.81	-2.29	-1.51	-1.001220343	-5.68	-14.29	-2.92	-1.48	-2.95	-1.72	-3.97311552]+5;
+% stg.ub = zeros(1,stg.parnum);
+% stg.ub = [-2.17	-1.39	-4.81	-2.29	-1.51	-1.001220343	-5.68	-14.29	-2.92	-1.48	-2.95	-1.72	-3.97311552]+5;
+stg.ub = [-2.17	-1.39	-4.81	-2.29	-1.51	-1.001220343	-5.68	-2.92	-1.48	-2.95	-1.72	-3.97311552]+5;
 
 %% Diagnostics
 
@@ -174,7 +147,8 @@ stg.ub = [-2.17	-1.39	-4.81	-2.29	-1.51	-1.001220343	-5.68	-14.29	-2.92	-1.48	-2
 % in the optimization array, usually not all parameters are optimized so
 % there needs to be a match between one and the other.
 % (Parameters to test)
-stg.partest(:,1) = [1  ,2  ,3  ,4  ,5  ,6  ,7 , 8, 9, 10, 11, 12, 13, 13];
+% stg.partest(:,1) = [1  ,2  ,3  ,4  ,5  ,6  ,7 , 8, 9, 10, 11, 12, 13, 13];
+stg.partest(:,1) = [1  ,2  ,3  ,4  ,5  ,6  ,7 ,0 , 8, 9, 10, 11, 12, 12];
 
 % stg.ms.partest(:,1) = [0  ,0  ,0  ,0  ,0  ,0  ,0 ,0 ,1 ,2,...
 %                        3  ,4  ,5];
@@ -187,8 +161,8 @@ stg.pat = [1:5];
 % All the parameter arrays, in this case there is only one
 % (Parameter arrays)
 
- stg.pa(1,:) = [-2.17	-1.39	-4.81	-2.29	-1.51	-1.001220343	-5.68	-14.29	-2.92	-1.48	-2.95	-1.72	-3.97311552];
-
+%  stg.pa(1,:) = [-2.17	-1.39	-4.81	-2.29	-1.51	-1.001220343	-5.68	-14.29	-2.92	-1.48	-2.95	-1.72	-3.97311552];
+ stg.pa(1,:) = [-2.17	-1.39	-4.81	-2.29	-1.51	-1.001220343	-5.68	-2.92	-1.48	-2.95	-1.72	-3.97311552];
 
 
 % stg.pa(2,:) = [-5.55989864063675,-0.304770080707731,-0.00658873778774330,-0.751543966569368,-4.98658661325973,-10.8262084004129,-2.29017776576445,-5.27676773486169,0,0,-15,-2.29848180793148,-15];
@@ -208,9 +182,12 @@ stg.pat = [1:5];
 % 30 min opt simulation original paper [13,15,17]
 
 % ga
-stg.pa(2,:) = [-2.42086540715786,-3.24935270591300,-5.50358814873804,-0.429732350989125,1.61687534421345,-0.663798737879993,-6.01233507106336,-12.6510728391742,-2.39679870776973,-2.18053030812925,-3.80541273616045,-1.44306051512632,-4.57843114427860];
+% stg.pa(2,:) = [-2.42086540715786,-3.24935270591300,-5.50358814873804,-0.429732350989125,1.61687534421345,-0.663798737879993,-6.01233507106336,-12.6510728391742,-2.39679870776973,-2.18053030812925,-3.80541273616045,-1.44306051512632,-4.57843114427860];
+stg.pa(2,:) = [-2.42086540715786,-3.24935270591300,-5.50358814873804,-0.429732350989125,1.61687534421345,-0.663798737879993,-6.01233507106336,-2.39679870776973,-2.18053030812925,-3.80541273616045,-1.44306051512632,-4.57843114427860];
+
 %  pswarm
-stg.pa(3,:) = [-2.40121981171952,-6.38531416410197,-1.09875841618271,2.71000000000000,3.42165963705401,3.81277306775525,-5.99154979112011,-19.2900000000000,-2.61470175382565,-2.42179553929476,-3.46177378947215,2.29487623762162,-4.25692493371163];
+% stg.pa(3,:) = [-2.40121981171952,-6.38531416410197,-1.09875841618271,2.71000000000000,3.42165963705401,3.81277306775525,-5.99154979112011,-19.2900000000000,-2.61470175382565,-2.42179553929476,-3.46177378947215,2.29487623762162,-4.25692493371163];
+stg.pa(3,:) = [-2.40121981171952,-6.38531416410197,-1.09875841618271,2.71000000000000,3.42165963705401,3.81277306775525,-5.99154979112011,-2.61470175382565,-2.42179553929476,-3.46177378947215,2.29487623762162,-4.25692493371163];
 
 % 6 min opt simulation original paper [13,15,17]
 
@@ -221,12 +198,15 @@ stg.pa(3,:) = [-2.40121981171952,-6.38531416410197,-1.09875841618271,2.710000000
 % 60 min opt simulation original paper [13,15,17]
 
 % ga
-stg.pa(4,:) = [-2.52416346057154,-1.74687101060155,-2.39377872648839,2.43117095384644,-1.02177945056860,-1.01837219271408,-3.89593620393162,-9.61268781923547,-4.55367200318144,-2.08499567449054,-2.49615183591973,0.653630312903766,-8.95582638514125];
+% stg.pa(4,:) = [-2.52416346057154,-1.74687101060155,-2.39377872648839,2.43117095384644,-1.02177945056860,-1.01837219271408,-3.89593620393162,-9.61268781923547,-4.55367200318144,-2.08499567449054,-2.49615183591973,0.653630312903766,-8.95582638514125];
+stg.pa(4,:) = [-2.52416346057154,-1.74687101060155,-2.39377872648839,2.43117095384644,-1.02177945056860,-1.01837219271408,-3.89593620393162,-4.55367200318144,-2.08499567449054,-2.49615183591973,0.653630312903766,-8.95582638514125];
+
 
 % 60 min opt data original paper [13,15,17]
 
 % ga
-stg.pa(5,:) = [-1.77876614157772,-1.44851940922699,-4.57839868067720,-7.10911954606339,-1.52901534196175,0.273623152056231,-5.01524543004682,-14.5741990930338,-3.51849568444816,-2.02136632461335,-2.59671512270533,-1.42779571793519,-3.58800874192562];
+% stg.pa(5,:) = [-1.77876614157772,-1.44851940922699,-4.57839868067720,-7.10911954606339,-1.52901534196175,0.273623152056231,-5.01524543004682,-14.5741990930338,-3.51849568444816,-2.02136632461335,-2.59671512270533,-1.42779571793519,-3.58800874192562];
+stg.pa(5,:) = [-1.77876614157772,-1.44851940922699,-4.57839868067720,-7.10911954606339,-1.52901534196175,0.273623152056231,-5.01524543004682,-3.51849568444816,-2.02136632461335,-2.59671512270533,-1.42779571793519,-3.58800874192562];
 
 % Best parameter array found so far for the model
 % (Best parameter array)
@@ -247,7 +227,7 @@ stg.plotoln = true;
 
 % Number of samples to use in SA
 % (Sensitivity analysis number of samples)
-stg.sansamples = 36;
+stg.sansamples = 10000;
 
 % True or false to decide whether to subtract the mean before calculating SI and
 % SIT
@@ -281,7 +261,7 @@ stg.PLind = -1;
 % Which parameters to do PL on, it should be all parameters but can also be
 % a subset for testing purposes
 % (Profile Likelihood parameters to Test)
-stg.pltest = (1:13);
+stg.pltest = (1:12);
 
 % How many points to do for each parameter in the PL
 % (Profile Likelihood Resolution)
@@ -315,11 +295,11 @@ stg.plfmo = optimoptions('fmincon','Display','off',...
 %  Time for the optimization in seconds (fmincon does not respect this
 % time!!)
 % (Optimization time)
-stg.optt = 60*60;
+stg.optt = 60*30;
 
 % Population size for the algorithms that use populations
 % (Population size)
-stg.popsize = 1080;
+stg.popsize = 3600;
 
 % optimization start method, choose between:
 % 1 Random starting point or group of starting points inside the bounds
@@ -347,66 +327,23 @@ stg.optplots = true;
 % very well, no max time!!)
 stg.fmincon = false;
 
-% Options for fmincon
-% (fmincon options)
-stg.fm_options = optimoptions('fmincon',...
-    'UseParallel',stg.optmc,...
-    'Algorithm','interior-point',...
-    'MaxIterations',2,'OptimalityTolerance',0,...
-    'StepTolerance',1e-6,'FiniteDifferenceType','central',...
-    'MaxFunctionEvaluations',10000);
-
 % True or false to decide whether to run simulated annealing
 % (Simulated annealing)
 stg.sa = false;
-
-% Options for simulated annealing
-% (Simulated annealing options)
-stg.sa_options = optimoptions(@simulannealbnd, ...
-    'MaxTime',stg.optt,...
-    'InitialTemperature',...
-    ones(1,stg.parnum)*2,'ReannealInterval',40);
 
 % True or false to decide whether to run Pattern search
 % (Pattern search)
 stg.psearch = false;
 
-% Options for Pattern search
-% (Pattern search options)
-stg.psearch_options = optimoptions(@patternsearch,...
-    'MaxTime',stg.optt,'UseParallel',stg.optmc,...
-    'UseCompletePoll',true,'UseCompleteSearch',true,...
-    'MaxMeshSize',2,'MaxFunctionEvaluations',2000);
-
 % True or false to decide whether to run Genetic algorithm
 % (Genetic algorithm)
 stg.ga = true;
-
-% Options for Genetic algorithm
-% (Genetic algorithm options)
-stg.ga_options = optimoptions(@ga,'MaxGenerations',100,...
-    'MaxTime',stg.optt,'UseParallel',stg.optmc,...
-    'PopulationSize',stg.popsize,...
-    'MutationFcn','mutationadaptfeasible','Display','diagnose');
 
 % True or false to decide whether to run Particle swarm
 % (Particle swarm)
 stg.pswarm = false;
 
-% Options for Particle swarm
-% (Particle swarm options)
-stg.pswarm_options = optimoptions('particleswarm',...
-    'MaxTime',stg.optt,'UseParallel',stg.optmc,...
-    'SwarmSize',stg.popsize);
-
 % True or false to decide whether to run Surrogate optimization
 % (Surrogate optimization)
 stg.sopt = false;
-
-% Options for Surrogate optimization
-% (Surrogate optimization options)
-stg.sopt_options = optimoptions('surrogateopt',...
-    'MaxTime',stg.optt,'UseParallel',stg.optmc,...
-    'MaxFunctionEvaluations',5000,...
-    'MinSampleDistance',0.2,'MinSurrogatePoints',32*2+1);
 end
