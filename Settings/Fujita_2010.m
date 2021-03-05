@@ -87,15 +87,17 @@ stg.UnitConversion = true;
 
 % True or false to decide whether to do Absolute Tolerance Scaling
 % (Absolute Tolerance Scaling)
-stg.abstolscale = false;
+stg.abstolscale = true;
 
 % Value of Relative tolerance
 % (Relative tolerance)
-stg.reltol = 1.0E-4;
+stg.reltol = 1.0E-4; 
 
 % Value of Absolute tolerance
 % (Absolute tolerance)
-stg.abstol = 1.0E-4;
+stg.abstol = 1.0E-19;%% This value is very low due to the size of the 
+% compartment, use a compartment of 1 liter and increadse this to 1.0E-4
+% to greatly improve run speed
 
 % Time units for simulation
 % (Simulation time)
@@ -104,7 +106,7 @@ stg.simtime = "second";
 % True or false to decide whether to run sbioaccelerate (after changing this value
 % you need to run "clear functions" to see an effect)
 % (sbioaccelerate)
-stg.sbioacc = true;
+stg.sbioacc = false;
 
 % Max step size in the simulation (if empty matlab decides whats best)
 % (Maximum step)
@@ -295,11 +297,11 @@ stg.plfmo = optimoptions('fmincon','Display','off',...
 %  Time for the optimization in seconds (fmincon does not respect this
 % time!!)
 % (Optimization time)
-stg.optt = 60*30;
+stg.optt = 60*60;
 
 % Population size for the algorithms that use populations
 % (Population size)
-stg.popsize = 3600;
+stg.popsize = 10800;
 
 % optimization start method, choose between:
 % 1 Random starting point or group of starting points inside the bounds
@@ -341,7 +343,7 @@ stg.ga = true;
 
 % True or false to decide whether to run Particle swarm
 % (Particle swarm)
-stg.pswarm = false;
+stg.pswarm = true;
 
 % True or false to decide whether to run Surrogate optimization
 % (Surrogate optimization)
