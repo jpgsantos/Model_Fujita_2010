@@ -24,6 +24,6 @@ https://github.com/jpgsantos/Subcellular_workflow
 
 # References
 
-Fujita, K. A., Toyoshima, Y., Uda, S., Ozaki, Y., Kubota, H., & Kuroda, S. (2010). Decoupling of receptor and downstream signals in the Akt pathway by its low-pass filter characteristics. Science signaling, 3(132). https://doi.org/10.1126/scisignal.2000810
+[Fujita, K. A., Toyoshima, Y., Uda, S., Ozaki, Y., Kubota, H., & Kuroda, S. (2010). Decoupling of receptor and downstream signals in the Akt pathway by its low-pass filter characteristics. Science signaling, 3(132).](https://doi.org/10.1126/scisignal.2000810)
 
-Hass, H., Loos, C., Raimndez-Alvarez, E., Timmer, J., Hasenauer, J., Kreutz, C. (2019). Benchmark problems for dynamic modeling of intracellular processes. Bioinformatics. 35:3073–3082. 
+[Hass, H., Loos, C., Raimndez-Alvarez, E., Timmer, J., Hasenauer, J., Kreutz, C. (2019). Benchmark problems for dynamic modeling of intracellular processes. Bioinformatics. 35:3073–3082.](https://doi.org/10.1093/bioinformatics/btz020)
