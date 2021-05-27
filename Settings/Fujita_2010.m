@@ -108,6 +108,9 @@ stg.simtime = "second";
 % (sbioaccelerate)
 stg.sbioacc = false;
 
+% (Absolute tolerance step size for equilibration)
+stg.abstolstepsize_eq = [];
+
 % Max step size in the simulation (if empty matlab decides whats best)
 % (Maximum step)
 stg.maxstep = [];
@@ -115,6 +118,15 @@ stg.maxstep = [];
 % Max step size in the equilibration (if empty matlab decides whats best)
 % (Maximum step)
 stg.maxstepeq = [];
+
+% Max step size in the detailed plots (if empty matlab decides whats best)
+% (Maximum step)
+stg.maxstepdetail = [];
+
+% Default score when there is a simulation error, this is needed to keep
+% the optimizations working.
+% (error score)
+stg.errorscore = 10^5;
 
 %% Model
 
