@@ -18,7 +18,7 @@ stg.sbtab_excel_name = "SBTAB_Fujita_2010_gsa.xlsx";
 
 % Name of the model
 % (Name)
-stg.name = "Fujita_2010";
+stg.name = "Fujita_2010_gsa";
 
 % Name of the default model compartment
 % (Compartment name)
