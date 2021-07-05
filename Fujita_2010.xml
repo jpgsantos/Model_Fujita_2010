@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+  <model id="Fujita_2010">
+    <listOfUnitDefinitions>
+      <unitDefinition id="time">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="-3" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="substance">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="-3" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="volume">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="area">
+        <listOfUnits>
+          <unit kind="metre" exponent="2" scale="-9" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="length">
+        <listOfUnits>
+          <unit kind="metre" exponent="1" scale="-9" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="nanomole_per_liter">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="-9" multiplier="1"/>
+          <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="liter_per_nanomole_second">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
+          <unit kind="mole" exponent="-1" scale="-9" multiplier="1"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="one_over_second">
+        <listOfUnits>
+          <unit kind="dimensionless" exponent="1" scale="0" multiplier="1"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="liter">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="V1" name="Cell" size="1e-15" units="liter"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="EGFR" name="EGFR" compartment="V1" initialConcentration="68190.2" substanceUnits="substance"/>
+      <species id="pEGFR" name="pEGFR" compartment="V1" initialConcentration="0" substanceUnits="substance"/>
+      <species id="pEGFR_Akt" name="pEGFR_Akt" compartment="V1" initialConcentration="0" substanceUnits="substance"/>
+      <species id="Akt" name="Akt" compartment="V1" initialConcentration="0.043309" substanceUnits="substance"/>
+      <species id="pAkt" name="pAkt" compartment="V1" initialConcentration="0" substanceUnits="substance"/>
+      <species id="S6" name="S6" compartment="V1" initialConcentration="3.54317" substanceUnits="substance"/>
+      <species id="pAkt_S6" name="pAkt_S6" compartment="V1" initialConcentration="0" substanceUnits="substance"/>
+      <species id="pS6" name="pS6" compartment="V1" initialConcentration="0" substanceUnits="substance"/>
+      <species id="EGF_EGFR" name="EGF_EGFR" compartment="V1" initialConcentration="0" substanceUnits="substance"/>
+      <species id="EGF" name="EGF" compartment="V1" initialConcentration="0" substanceUnits="substance" boundaryCondition="true"/>
+      <species id="pro_EGFR" name="pro_EGFR" compartment="V1" initialConcentration="68190.2" substanceUnits="substance" boundaryCondition="true"/>
+      <species id="pEGFR_tot" name="pEGFR_tot" compartment="V1" initialConcentration="0" substanceUnits="substance" boundaryCondition="true"/>
+      <species id="pAkt_tot" name="pAkt_tot" compartment="V1" initialConcentration="0" substanceUnits="substance" boundaryCondition="true"/>
+      <species id="pS6_tot" name="pS6_tot" compartment="V1" initialConcentration="0" substanceUnits="substance" boundaryCondition="true"/>
+      <species id="EGFR_test" name="EGFR_test" compartment="V1" initialConcentration="0" substanceUnits="substance" boundaryCondition="true"/>
+      <species id="pEGFR_test" name="pEGFR_test" compartment="V1" initialConcentration="0" substanceUnits="substance" boundaryCondition="true"/>
+      <species id="pEGFR_Akt_test" name="pEGFR_Akt_test" compartment="V1" initialConcentration="0" substanceUnits="substance" boundaryCondition="true"/>
+      <species id="Akt_test" name="Akt_test" compartment="V1" initialConcentration="0" substanceUnits="substance" boundaryCondition="true"/>
+      <species id="pAkt_test" name="pAkt_test" compartment="V1" initialConcentration="0" substanceUnits="substance" boundaryCondition="true"/>
+      <species id="S6_test" name="S6_test" compartment="V1" initialConcentration="0" substanceUnits="substance" boundaryCondition="true"/>
+      <species id="pAkt_S6_test" name="pAkt_S6_test" compartment="V1" initialConcentration="0" substanceUnits="substance" boundaryCondition="true"/>
+      <species id="pS6_test" name="pS6_test" compartment="V1" initialConcentration="0" substanceUnits="substance" boundaryCondition="true"/>
+      <species id="EGF_EGFR_test" name="EGF_EGFR_test" compartment="V1" initialConcentration="0" substanceUnits="substance" boundaryCondition="true"/>
+      <species id="EGF_test" name="EGF_test" compartment="V1" initialConcentration="0" substanceUnits="substance" boundaryCondition="true"/>
+      <species id="pro_EGFR_test" name="pro_EGFR_test" compartment="V1" initialConcentration="0" substanceUnits="substance" boundaryCondition="true"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="reaction_1_k1" name="reaction_1_k1" value="0.00673816" units="liter_per_nanomole_second"/>
+      <parameter id="reaction_1_k2" name="reaction_1_k2" value="0.040749" units="one_over_second"/>
+      <parameter id="reaction_2_k1" name="reaction_2_k1" value="1.5543e-05" units="liter_per_nanomole_second"/>
+      <parameter id="reaction_2_k2" name="reaction_2_k2" value="0.00517473" units="one_over_second"/>
+      <parameter id="reaction_3_k1" name="reaction_3_k1" value="0.0305684" units="one_over_second"/>
+      <parameter id="reaction_4_k1" name="reaction_4_k1" value="0.0997194" units="one_over_second"/>
+      <parameter id="reaction_5_k1" name="reaction_5_k1" value="2.10189e-06" units="liter_per_nanomole_second"/>
+      <parameter id="reaction_5_k2" name="reaction_5_k2" value="5.17939999999999e-15" units="one_over_second"/>
+      <parameter id="reaction_6_k1" name="reaction_6_k1" value="0.00121498" units="one_over_second"/>
+      <parameter id="reaction_7_k1" name="reaction_7_k1" value="0.0327962" units="one_over_second"/>
+      <parameter id="reaction_8_k1" name="reaction_8_k1" value="0.00113102" units="one_over_second"/>
+      <parameter id="reaction_9_k1" name="reaction_9_k1" value="0.0192391" units="one_over_second"/>
+      <parameter id="reaction_10_k1" name="reaction_10_k1" value="0.000106386" units="one_over_second"/>
+      <parameter id="reaction_11_k1" name="reaction_11_k1" value="0.000106386" units="one_over_second"/>
+    </listOfParameters>
+    <listOfRules>
+      <assignmentRule variable="pEGFR_tot">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <cn> 0.000181735 </cn>
+            <apply>
+              <plus/>
+              <ci> pEGFR </ci>
+              <ci> pEGFR_Akt </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="pAkt_tot">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <cn> 60.0588 </cn>
+            <apply>
+              <plus/>
+              <ci> pAkt </ci>
+              <ci> pAkt_S6 </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="pS6_tot">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <cn> 49886.2 </cn>
+            <ci> pS6 </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="EGFR_test">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> EGFR </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="pEGFR_test">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> pEGFR </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="pEGFR_Akt_test">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> pEGFR_Akt </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="Akt_test">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> Akt </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="pAkt_test">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> pAkt </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="S6_test">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> S6 </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="pAkt_S6_test">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> pAkt_S6 </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="pS6_test">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> pS6 </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="EGF_EGFR_test">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> EGF_EGFR </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="EGF_test">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> EGF </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="pro_EGFR_test">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> pro_EGFR </ci>
+        </math>
+      </assignmentRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction id="ReactionFlux0" name="ReactionFlux0" reversible="true">
+        <listOfReactants>
+          <speciesReference species="EGFR"/>
+          <speciesReference species="EGF"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="EGF_EGFR"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> EGF </ci>
+                  <ci> EGFR </ci>
+                  <ci> reaction_1_k1 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> EGF_EGFR </ci>
+                  <ci> reaction_1_k2 </ci>
+                </apply>
+              </apply>
+              <ci> V1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="ReactionFlux1" name="ReactionFlux1" reversible="true">
+        <listOfReactants>
+          <speciesReference species="pEGFR"/>
+          <speciesReference species="Akt"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="pEGFR_Akt"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> Akt </ci>
+                  <ci> pEGFR </ci>
+                  <ci> reaction_2_k1 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> pEGFR_Akt </ci>
+                  <ci> reaction_2_k2 </ci>
+                </apply>
+              </apply>
+              <ci> V1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="ReactionFlux2" name="ReactionFlux2" reversible="false">
+        <listOfReactants>
+          <speciesReference species="pEGFR_Akt"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="pEGFR"/>
+          <speciesReference species="pAkt"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> pEGFR_Akt </ci>
+              <ci> reaction_3_k1 </ci>
+              <ci> V1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="ReactionFlux3" name="ReactionFlux3" reversible="false">
+        <listOfReactants>
+          <speciesReference species="pEGFR"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> pEGFR </ci>
+              <ci> reaction_4_k1 </ci>
+              <ci> V1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="ReactionFlux4" name="ReactionFlux4" reversible="true">
+        <listOfReactants>
+          <speciesReference species="pAkt"/>
+          <speciesReference species="S6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="pAkt_S6"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> S6 </ci>
+                  <ci> pAkt </ci>
+                  <ci> reaction_5_k1 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> pAkt_S6 </ci>
+                  <ci> reaction_5_k2 </ci>
+                </apply>
+              </apply>
+              <ci> V1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="ReactionFlux5" name="ReactionFlux5" reversible="false">
+        <listOfReactants>
+          <speciesReference species="pAkt_S6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="pAkt"/>
+          <speciesReference species="pS6"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> pAkt_S6 </ci>
+              <ci> reaction_6_k1 </ci>
+              <ci> V1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="ReactionFlux6" name="ReactionFlux6" reversible="false">
+        <listOfReactants>
+          <speciesReference species="pAkt"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Akt"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> pAkt </ci>
+              <ci> reaction_7_k1 </ci>
+              <ci> V1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="ReactionFlux7" name="ReactionFlux7" reversible="false">
+        <listOfReactants>
+          <speciesReference species="pS6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="S6"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> pS6 </ci>
+              <ci> reaction_8_k1 </ci>
+              <ci> V1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="ReactionFlux8" name="ReactionFlux8" reversible="false">
+        <listOfReactants>
+          <speciesReference species="EGF_EGFR"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="pEGFR"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> EGF_EGFR </ci>
+              <ci> reaction_9_k1 </ci>
+              <ci> V1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="ReactionFlux9" name="ReactionFlux9" reversible="false">
+        <listOfReactants>
+          <speciesReference species="EGFR"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> EGFR </ci>
+              <ci> reaction_10_k1 </ci>
+              <ci> V1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="ReactionFlux10" name="ReactionFlux10" reversible="false">
+        <listOfReactants>
+          <speciesReference species="pro_EGFR"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="EGFR"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> pro_EGFR </ci>
+              <ci> reaction_11_k1 </ci>
+              <ci> V1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>
