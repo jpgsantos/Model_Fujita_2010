@@ -1,4 +1,4 @@
-!!SBtab	SBtabVersion='1.0' TableType='QuantityMatrix' TableName='E1' 'TableTitle='' Document='Fujita_2010'						
+!!SBtab	SBtabVersion='1.0' TableType='QuantityMatrix' TableName='E1' 'TableTitle='' Document='Fujita_2010_gsa'						
 !TimePoint	!Time	>Y0	SD_Y0	>Y1	SD_Y1	>Y2	SD_Y2
 E0T0	0	0	0.01	0	0.01	0	0.01
 E0T1	61	0.0249	0.01	0.062207	0.01	0.0019654	0.01

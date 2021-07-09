@@ -1,4 +1,4 @@
-!!SBtab	Document='Fujita_2010' TableName='Parameter' TableType='Quantity' TableTitle='Fujita_2010 parameters'						
+!!SBtab	Document='Fujita_2010_gsa' TableName='Parameter' TableType='Quantity' TableTitle='Parameters'						
 !ID	!Name	!Unit	!Value:log2	!Value:linspace	!Value:log10	!Location	!Comment
 K0	reaction_1_k1	liter/(nanomole*second)		0.0067382	-2.1715	Cell	reaction_1_k1
 K1	reaction_1_k2	1/second		0.040749	-1.3899	Cell	reaction_1_k2

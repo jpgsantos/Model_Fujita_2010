@@ -1,4 +1,4 @@
-!!SBtab	SBtabVersion='1.0' TableName='Output' TableTitle='Model output functions' TableType='Quantity' Document='Fujita_2010'								
+!!SBtab	SBtabVersion='1.0' TableName='Output' TableTitle='Model output functions' TableType='Quantity' Document='Fujita_2010_gsa'								
 !ID	!Name	!Comment	!ErrorName	!ErrorType	!Unit	!ProbDist	!LaTeX	!Location	!Formula
 Y0	pEGFR_tot	Total pEGFR	SD_Y0	abs+rel random noise (std)	nanomole/liter	normal	\ce{[Total_{\text{C}}]}	Cell	0.000181735*(pEGFR+pEGFR_Akt)
 Y1	pAkt_tot	Total pAkt	SD_Y1	abs+rel random noise (std)	nanomole/liter	normal	\ce{[Total_{\text{C}}]}	Cell	60.0588*(pAkt+pAkt_S6)

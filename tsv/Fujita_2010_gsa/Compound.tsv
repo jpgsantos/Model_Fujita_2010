@@ -1,4 +1,4 @@
-!!SBtab	Document='Fujita_2010' TableName='Compound' TableType='Compound' TableTitle='Fujita_2010 Compounds'								
+!!SBtab	Document='Fujita_2010_gsa' TableName='Compound' TableType='Compound' TableTitle='Compounds'								
 !ID	!Name	!Unit	!InitialValue	!IsConstant	!Assignment	!Interpolation	!Type	!Location	!ReferenceDOI
 S0	EGFR	nanomole/liter	68190.2	false	false	false	kinetic	Cell	10.1126/scisignal.2000810
 S1	pEGFR	nanomole/liter	0	false	false	false	kinetic	Cell	10.1126/scisignal.2000810

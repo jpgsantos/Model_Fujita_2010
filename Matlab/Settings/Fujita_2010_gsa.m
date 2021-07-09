@@ -31,7 +31,6 @@ stg.sbtab_name = "SBtab_" + stg.name;
 %% Analysis
 
 % Experiments to run
-% stg.ms.exprun = [1,3,4];
 stg.exprun = [1:6];
 
 % Choice between 0,1,2 and 3 to change either and how to apply log10 to the
